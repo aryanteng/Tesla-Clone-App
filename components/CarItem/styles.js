@@ -1,9 +1,12 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
   carContainer: {
     width: "100%",
-    height: "100%",
+    height: Dimensions.get("window").height,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   titles: {
     marginTop: "30%",
@@ -15,7 +18,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   subtitle: {
-    color: "#536471",
+    color: "#000",
+    opacity: 0.5,
   },
   image: {
     width: "100%",
