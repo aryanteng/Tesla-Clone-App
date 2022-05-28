@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./styles";
 
@@ -6,13 +6,13 @@ export default function CustomButton({ text, type }) {
   const backgroundColor = type === "primary" ? "black" : "white";
   const color = type === "primary" ? "white" : "black";
   return (
-    <View style={styles.container}>
-      <Pressable
-        style={[styles.button, { backgroundColor: backgroundColor }]}
-        onPress={() => console.warn(`${text} was Pressed!`)}
-      >
+    <TouchableOpacity
+      onPress={() => console.warn(`${text} was Pressed!`)}
+      style={styles.container}
+    >
+      <View style={[styles.button, { backgroundColor: backgroundColor }]}>
         <Text style={[styles.text, { color: color }]}>{text}</Text>
-      </Pressable>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 }
